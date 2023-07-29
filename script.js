@@ -2,6 +2,7 @@ const itemForm = document.getElementById('item-form');
 const itemInput = document.getElementById('item-input');
 const itemList = document.getElementById('item-list');
 const itemFilter = document.getElementById('filter');
+const clearBtn = document.getElementById('clear');
 
 function addItem(e) {
   e.preventDefault();
@@ -72,9 +73,32 @@ function onBlurFilter(e) {
   itemFilter.style.backgroundColor = 'transparent';
 }
 
+//Remove Items (one by one)
+function removeItem(e) {
+  if (
+    e.target.parentElement.classList.contains('items') ||
+    e.target.parentElement.classList.contains('remove-item')
+  ) {
+    if (e.target.parentElement.classList.contains('remove-item')) {
+      e.target.parentElement.parentElement.remove();
+    } else {
+      e.target.remove();
+    }
+  }
+}
+
+//Clear All Items
+function clearItems(e) {
+  while (itemList.firstChild) {
+    itemList.removeChild(itemList.firstChild);
+  }
+}
+
 //Event Listeners
 itemForm.addEventListener('submit', addItem);
 itemInput.addEventListener('focus', onFocus);
 itemInput.addEventListener('blur', onBlur);
 itemFilter.addEventListener('focus', onFocusFilter);
 itemFilter.addEventListener('blur', onBlurFilter);
+itemList.addEventListener('click', removeItem);
+clearBtn.addEventListener('click', clearItems);
