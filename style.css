@@ -42,7 +42,8 @@ header h1 {
   padding: 25px;
   background-color: #5c5d8d2e;
   border-radius: 10px;
-  box-shadow: 0 4px 8px #7d82b8;
+  /* box-shadow: 0 4px 8px #7d82b8; */
+  box-shadow: 5px 5px 3px 2px rgba(92, 40, 101, 0.3);
 }
 
 .edit-mode {
@@ -69,6 +70,7 @@ header h1 {
   outline-offset: -4px;
   background-color: #fff9fa;
   color: #5159b2;
+  box-shadow: 5px 5px 0px 1px rgba(92, 40, 101, 0.3);
 }
 
 .filter {
@@ -102,13 +104,16 @@ header h1 {
   outline-color: #5c5d8d2e;
   outline-style: solid;
   outline-offset: -4px;
-  box-shadow: 0 4px 8px #7d82b8;
+  box-shadow: 0 4px 8px rgba(92, 40, 101, 0.3);
 }
 
 .btn:hover {
   background-color: #7d82b8;
   color: #cbff8c;
-  border: 1px solid white;
+  outline: 3px;
+  outline-color: #5c5d8d2e;
+  outline-style: solid;
+  outline-offset: 4px;
 }
 
 .btn-link {
@@ -130,7 +135,7 @@ header h1 {
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 4px 4px rgba(92, 40, 101, 0.3);
 }
 
 .btn-clear:hover {
@@ -165,12 +170,16 @@ header h1 {
   outline-style: solid;
   outline-offset: -4px;
   user-select: none;
+  box-shadow: 5px 2px 1px 1px rgba(92, 40, 101, 0.3);
+  /* box-shadow: -5px 2px 1px 1px rgba(92, 40, 101, 0.3); */
 }
 
 .items li:hover {
   background-color: #fbeff1;
   color: #4750af;
-  border: 1px solid rgba(255, 0, 0, 0.354);
+  outline-color: red;
+  outline-style: solid;
+  outline-offset: -3px;
 }
 
 @media (max-width: 770px) {

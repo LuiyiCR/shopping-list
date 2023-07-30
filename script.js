@@ -11,7 +11,7 @@ function addItem(e) {
 
   //Validate Input
   if (newItem === '') {
-    alert('Add your item!');
+    alert('ENTER ITEM!');
     return;
   }
 
