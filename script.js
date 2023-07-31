@@ -94,6 +94,11 @@ function clearItems(e) {
   }
 }
 
+//Clicking on the search icon focuses on the search filter
+document.getElementById('searchIcon').addEventListener('click', function () {
+  document.getElementById('filter').focus();
+});
+
 //Event Listeners
 itemForm.addEventListener('submit', addItem);
 itemInput.addEventListener('focus', onFocus);

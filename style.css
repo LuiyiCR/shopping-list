@@ -95,6 +95,7 @@ header h1 {
 
 /* Buttons */
 .btn {
+  font-size: 14px;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
