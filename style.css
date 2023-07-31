@@ -95,26 +95,23 @@ header h1 {
 
 /* Buttons */
 .btn {
-  background-color: #cbff8c;
-  color: #3b44af;
-  border: none;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
-  outline: 1px;
-  outline-color: #5c5d8d2e;
-  outline-style: solid;
-  outline-offset: -4px;
-  box-shadow: 0 4px 8px #7d82b8;
+  background-color: #5c9ebf;
+  color: white;
+  border: 1px solid white;
 }
 
 .btn:hover {
-  background-color: #7d82b8;
-  color: #cbff8c;
-  outline: 1.5px;
+  background-color: #5bc0de;
+  color: #ffffff;
+  border: 2px solid #5c9ebf;
+  outline: 2px;
   outline-color: white;
   outline-style: solid;
   outline-offset: 1px;
+  border: none;
 }
 
 .btn-link {
