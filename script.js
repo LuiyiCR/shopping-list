@@ -28,7 +28,10 @@ function addItem(e) {
   const button = createButton('remove-item btn-link text-red');
   li.appendChild(button);
 
+  //Add li to DOM
   itemList.appendChild(li);
+
+  checkUI();
 
   itemInput.value = '';
 }
@@ -80,24 +83,46 @@ function removeItem(e) {
     e.target.parentElement.classList.contains('remove-item')
   ) {
     if (e.target.parentElement.classList.contains('remove-item')) {
-      e.target.parentElement.parentElement.remove();
-    } else {
+      if (confirm('Delete?')) {
+        e.target.parentElement.parentElement.remove();
+      }
+    } else if (confirm('Delete?')) {
       e.target.remove();
+
+      checkUI();
     }
   }
 }
 
 //Clear All Items
 function clearItems(e) {
-  while (itemList.firstChild) {
-    itemList.removeChild(itemList.firstChild);
+  if (confirm('Delete All?')) {
+    while (itemList.firstChild) {
+      itemList.removeChild(itemList.firstChild);
+    }
   }
+
+  checkUI();
 }
 
 //Clicking on the search icon focuses on the search filter
 document.getElementById('searchIcon').addEventListener('click', function () {
   document.getElementById('filter').focus();
 });
+
+//Getting Rid of the Clear All Btn and Search Filter if there are no elements in the list
+function checkUI() {
+  const items = itemList.querySelectorAll('li');
+  if (items.length === 0) {
+    clearBtn.style.display = 'none';
+    itemFilter.style.display = 'none';
+    searchIcon.style.display = 'none';
+  } else {
+    clearBtn.style.display = 'block';
+    itemFilter.style.display = 'block';
+    searchIcon.style.display = 'block';
+  }
+}
 
 //Event Listeners
 itemForm.addEventListener('submit', addItem);
@@ -107,3 +132,5 @@ itemFilter.addEventListener('focus', onFocusFilter);
 itemFilter.addEventListener('blur', onBlurFilter);
 itemList.addEventListener('click', removeItem);
 clearBtn.addEventListener('click', clearItems);
+
+checkUI();
